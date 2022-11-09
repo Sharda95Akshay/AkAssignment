@@ -34,25 +34,35 @@ Ans. 1) Machine learning / Artificial intelligence
 5) Game development
 6) Mobile app development
 7) Embedded systems
+
 Q5. What are variable and how can we declare them?
 Ans. A variable is a name given to a specific memory location.
 ex: abc = 10
+
 Q6. How can we take an input from the user in Python?
 Ans. abc = input()
+
 Q7. What is the default datatype of the value that has been taken as an input using input() function?
 Ans. String
+
 Q8. What is type casting?
-Ans. Type Casting is the method to convert the variable data type into a certain data type in order to the operation required to be performed by users
+Ans. Type Casting is the method to convert the variable data type into a certain data type in order to the operation required to be performed by users.
+
 Q9. Can we take more than one input from the user using single input() function? If yes, how? If no, why?
 Ans. No.
+
 Q10. What are keywords?
 Ans. Python keywords are special reserved words that have specific meanings and purposes and can’t be used for anything but those specific purposes. These keywords are always available—you’ll never have to import them into your code.
+
 Q11. Can we use keywords as a variable? Support your answer with reason.
-Ans. We cannot use a keyword as a variable name, function name, or any other identifier. They are used to define the syntax and structure of the Python language. All the keywords except True , False and None are in lowercase and they must be written as they are
+Ans. We cannot use a keyword as a variable name, function name, or any other identifier. They are used to define the syntax and structure of the Python language. All the keywords except True , False and None are in lowercase.
+
 Q12. What is indentation? What's the use of indentaion in Python?
 Ans. Indentation refers to the spaces at the beginning of a code line. Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important. Python uses indentation to indicate a block of code.
+
 Q13. How can we throw some output in Python?
 Ans. Python developer you can choose to throw an exception if a condition occurs.
+
 Q14. What are operators in Python?
 Ans. Operators are used to perform operations on variables and values.
 Arithmetic operators
@@ -62,9 +72,11 @@ Logical operators
 Identity operators
 Membership operators
 Bitwise operators
+
 Q15. What is difference between / and // operators?
 Ans. / for float divison
 	// for integer divison
+	
 Q16. Write a code that gives following as an output.
 ```
 iNeuroniNeuroniNeuroniNeuron
@@ -77,8 +89,10 @@ Ans. num = int(input())
 	print("number is even")
 	else:
 	print("number is odd")
+	
 Q18. What are boolean operator?
 Ans. Boolean operator are True and False.
+
 Q19. What will the output of the following?
 ```
 1 or 0  
@@ -96,6 +110,7 @@ Ans. 1 or 0 ---- 1
 True and False and True   ---- False
 
 1 or 0 or 0    ---- 1
+
 Q20. What are conditional statements in Python?
 Ans. Conditional Statement in Python perform different computations or actions depending on whether a specific Boolean constraint evaluates to true or false. Conditional statements are handled by IF statements in Python.
 1) if statement.
@@ -103,12 +118,14 @@ Ans. Conditional Statement in Python perform different computations or actions d
 
 Q21. What is use of 'if', 'elif' and 'else' keywords?
 Ans. If the condition for if is False, it checks the condition of the next elif block and so on.If all the conditions are False, the body of else is executed.
+
 Q22. Write a code to take the age of person as an input and if age >= 18 display "I can vote". If age is < 18 display "I can't vote".
 Ans. age = int(input())
 	if(age >= 18):
 	print("I can vote")
 	else:
-	print("I can't vote").
+	print("I can't vote")
+	
 Q23. Write a code that displays the sum of all the even numbers from the given list.
 ```
 numbers = [12, 75, 150, 180, 145, 525, 50]
