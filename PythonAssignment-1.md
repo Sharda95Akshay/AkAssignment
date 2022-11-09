@@ -117,9 +117,11 @@ Ans. Conditional Statement in Python perform different computations or actions d
 2) if...else statement
 
 Q21. What is use of 'if', 'elif' and 'else' keywords?
+
 Ans. If the condition for if is False, it checks the condition of the next elif block and so on.If all the conditions are False, the body of else is executed.
 
 Q22. Write a code to take the age of person as an input and if age >= 18 display "I can vote". If age is < 18 display "I can't vote".
+
 Ans. age = int(input())
 	if(age >= 18):
 	print("I can vote")
