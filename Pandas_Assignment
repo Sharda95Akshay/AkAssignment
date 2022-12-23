@@ -1,0 +1,220 @@
+PandasAssignment
+Q1. How do you load a CSV file into a Pandas DataFrame?
+
+Ans import pandas as pd
+	df = pd.read_csv('data.csv')
+	print(df.to_string()) 
+
+Q2. How do you check the data type of a column in a Pandas DataFrame?
+
+Ans # importing pandas package
+import pandas as pd
+
+# create a Pandas DataFrame
+df = pd.DataFrame({'Col1':[4.1, 23.43], 'Col2':['a', 'w'], 'Col3':[1, 8]})
+
+print("DataFrame:")
+print(df)
+
+# apply the dty
+pe attribute
+result = df.dtypes
+
+print("Output:")
+print(result)
+
+Q3. How do you select rows from a Pandas DataFrame based on a condition?
+
+Ans # importing pandas
+import pandas as pd
+  
+record = {
+  
+ 'Name': ['Ankit', 'Amit', 'Aishwarya', 'Priyanka', 'Priya', 'Shaurya' ],
+ 'Age': [21, 19, 20, 18, 17, 21],
+ 'Stream': ['Math', 'Commerce', 'Science', 'Math', 'Math', 'Science'],
+ 'Percentage': [88, 92, 95, 70, 65, 78] }
+  
+# create a dataframe
+dataframe = pd.DataFrame(record, columns = ['Name', 'Age', 'Stream', 'Percentage'])
+  
+print("Given Dataframe :\n", dataframe) 
+  
+# selecting rows based on condition
+rslt_df = dataframe[dataframe['Percentage'] > 80]
+  
+print('\nResult dataframe :\n', rslt_df)
+
+Q4. How do you rename columns in a Pandas DataFrame?
+
+Ans # Import pandas package
+import pandas as pd
+
+# Define a dictionary containing ICC rankings
+rankings = {'test': ['India', 'South Africa', 'England',
+							'New Zealand', 'Australia'],
+			'odi': ['England', 'India', 'New Zealand',
+							'South Africa', 'Pakistan'],
+			't20': ['Pakistan', 'India', 'Australia',
+							'England', 'New Zealand']}
+
+# Convert the dictionary into DataFrame
+rankings_pd = pd.DataFrame(rankings)
+
+# Before renaming the columns
+print(rankings_pd)
+
+rankings_pd.rename(columns = {'test':'TEST'}, inplace = True)
+
+# After renaming the columns
+print("\nAfter modifying first column:\n", rankings_pd.columns)
+
+Q5. How do you drop columns in a Pandas DataFrame?
+
+Ans The drop() method removes the specified row or column. By specifying the column axis ( axis='columns' ), the drop() method removes the specified column. By specifying the row axis ( axis='index' ), the drop() method removes the specified row.
+
+Q6. How do you find the unique values in a column of a Pandas DataFrame?
+
+Ans You can get unique values in column (multiple columns) from pandas DataFrame using unique() or Series. unique() functions. unique() from Series is used to get unique values from a single column and the other one is used to get from multiple columns.
+
+Q7. How do you find the number of missing values in each column of a Pandas DataFrame?
+
+Ans Extract rows/columns with missing values in specific columns/rows. You can use the isnull() or isna() method of pandas. DataFrame and Series to check if each element is a missing value or not. isnull() is an alias for isna() , whose usage is the same.
+
+Q8. How do you fill missing values in a Pandas DataFrame with a specific value?
+
+Ans The fillna() method replaces the NULL values with a specified value. The fillna() method returns a new DataFrame object unless the inplace parameter is set to True , in that case the fillna() method does the replacing in the original DataFrame instead.
+
+Q9. How do you concatenate two Pandas DataFrames?
+
+Ans The concat() function (in the main pandas namespace) does all of the heavy lifting of performing concatenation operations along an axis while performing optional set logic (union or intersection) of the indexes (if any) on the other axes. Note that I say “if any” because there is only a single possible axis of concatenation for Series.
+
+Before diving into all of the details of concat and what it can do, here is a simple example
+In [1]: df1 = pd.DataFrame(
+   ...:     {
+   ...:         "A": ["A0", "A1", "A2", "A3"],
+   ...:         "B": ["B0", "B1", "B2", "B3"],
+   ...:         "C": ["C0", "C1", "C2", "C3"],
+   ...:         "D": ["D0", "D1", "D2", "D3"],
+   ...:     },
+   ...:     index=[0, 1, 2, 3],
+   ...: )
+   ...: 
+
+In [2]: df2 = pd.DataFrame(
+   ...:     {
+   ...:         "A": ["A4", "A5", "A6", "A7"],
+   ...:         "B": ["B4", "B5", "B6", "B7"],
+   ...:         "C": ["C4", "C5", "C6", "C7"],
+   ...:         "D": ["D4", "D5", "D6", "D7"],
+   ...:     },
+   ...:     index=[4, 5, 6, 7],
+   ...: )
+   ...: 
+
+In [3]: df3 = pd.DataFrame(
+   ...:     {
+   ...:         "A": ["A8", "A9", "A10", "A11"],
+   ...:         "B": ["B8", "B9", "B10", "B11"],
+   ...:         "C": ["C8", "C9", "C10", "C11"],
+   ...:         "D": ["D8", "D9", "D10", "D11"],
+   ...:     },
+   ...:     index=[8, 9, 10, 11],
+   ...: )
+   ...: 
+
+In [4]: frames = [df1, df2, df3]
+
+In [5]: result = pd.concat(frames)
+
+Q10. How do you merge two Pandas DataFrames on a specific column?
+
+Ans # importing modules
+import pandas as pd
+
+# creating a dataframe
+df1 = pd.DataFrame({'Name':['Raju', 'Rani', 'Geeta', 'Sita', 'Sohit'],
+					'Marks':[80, 90, 75, 88, 59]})
+
+# creating another dataframe with different data
+df2 = pd.DataFrame({'Name':['Raju', 'Divya', 'Geeta', 'Sita'],
+					'Grade':['A', 'A', 'B', 'A'],
+					'Rank':[3, 1, 4, 2 ],
+					'Gender':['Male', 'Female', 'Female', 'Female']})
+# display df1
+display(df1)
+
+# display df2
+display(df2)
+
+Q11. How do you group data in a Pandas DataFrame by a specific column and apply an aggregation function?
+
+Ans In Pandas, we can also apply different aggregation functions across different columns. For that, we need to pass a dictionary with key containing the column names and values containing the list of aggregation functions for any specific column.
+
+Q12. How do you pivot a Pandas DataFrame?
+
+Ans The pivot() function is used to reshaped a given DataFrame organized by given index / column values. This function does not support data aggregation, multiple values will result in a MultiIndex in the columns. Column to use to make new frame's index. If None, uses existing index
+
+Q13. How do you change the data type of a column in a Pandas DataFrame?
+
+Ans Change column type in pandas using DataFrame.apply()
+to_numeric, pandas. to_datetime, and pandas. to_timedelta as arguments to apply the apply() function to change the data type of one or more columns to numeric, DateTime, and time delta respectively.
+
+Q14. How do you sort a Pandas DataFrame by a specific column?
+
+Ans To sort the DataFrame based on the values in a single column, you'll use . sort_values() . By default, this will return a new DataFrame sorted in ascending order. It does not modify the original DataFrame
+
+Q15. How do you create a copy of a Pandas DataFrame?
+
+Ans The copy() method returns a copy of the DataFrame.
+
+By default, the copy is a "deep copy" meaning that any changes made in the original DataFrame will NOT be reflected in the copy.
+Syntax:
+dataframe.copy(deep)
+
+Q16. How do you filter rows of a Pandas DataFrame by multiple conditions?
+
+Ans Using Loc to Filter With Multiple Conditions
+The loc function in pandas can be used to access groups of rows or columns by label. Add each condition you want to be included in the filtered result and concatenate them with the & operator. You'll see our code sample will return a pd. dataframe of our filtered rows.
+
+Q17. How do you calculate the mean of a column in a Pandas DataFrame?
+
+Ans To calculate the mean of whole columns in the DataFrame, use pandas. Series. mean() with a list of DataFrame columns. You can also get the mean for all numeric columns using DataFrame.
+
+Q18. How do you calculate the standard deviation of a column in a Pandas DataFrame?
+
+Ans Standard deviation is calculated using the function . std() . However, the Pandas library creates the Dataframe object and then the function . std() is applied on that Dataframe .
+
+Q19. How do you calculate the correlation between two columns in a Pandas DataFrame?
+
+Ans By using corr() function we can get the correlation between two columns in the dataframe
+
+Q20. How do you select specific columns in a DataFrame using their labels?
+
+Ans Selecting columns based on their name
+This is the most basic way to select a single column from a dataframe, just put the string name of the column in brackets. Returns a pandas series. Passing a list in the brackets lets you select multiple columns at the same time.
+
+Q21. How do you select specific rows in a DataFrame using their indexes?
+
+Ans If you'd like to select rows based on integer indexing, you can use the . iloc function. If you'd like to select rows based on label indexing, you can use the . loc function
+
+Q22. How do you sort a DataFrame by a specific column?
+
+Ans To sort the DataFrame based on the values in a single column, you'll use . sort_values() . By default, this will return a new DataFrame sorted in ascending order. It does not modify the original DataFrame.
+
+Q23. How do you create a new column in a DataFrame based on the values of another column?
+
+Ans To create a new column based on other columns, either:
+1) use column-arithmetics for fastest performance.
+2) use NumPy's where(~) method for creating binary columns
+3) use the apply(~) method, which is the slowest but offers the most flexibility
+4) use the Series' replace(~) method for mapping new values from existing column.
+
+Q24. How do you remove duplicates from a DataFrame?
+
+Ans Pandas DataFrame drop_duplicates() Method
+The drop_duplicates() method removes duplicate rows. Use the subset parameter if only some specified columns should be considered when looking for duplicates.
+
+Q25. What is the difference between .loc and .iloc in Pandas?
+
+Ans .loc is label-based, which means that you have to specify rows and columns based on their row and column labels. iloc is integer position-based, so you have to specify rows and columns by their integer position values (0-based integer position)
